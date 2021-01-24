@@ -26,6 +26,7 @@ mod tests {
     fn test_two_sum() {
         let n: Vec<i32> = vec![2, 7, 11, 15];
         let t = 9;
-        println!("{:?}", Solution::two_sum(n, t));
+        let a: Vec<i32> = vec![0, 1];
+        assert_eq!(a, Solution::two_sum(n, t));
     }
 }
