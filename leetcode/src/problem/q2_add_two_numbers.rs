@@ -29,7 +29,7 @@ impl SinglyLinkedList {
     }
 }
 
-struct Solution;
+pub struct Solution;
 
 impl Solution {
     fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
@@ -77,5 +77,24 @@ impl Solution {
             ptr.push(*i);
         }
         return ptr.head;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_add_two_numbers() {
+        let cases: [(i32, i32, i32); 3] = [(2, 5, 8), (4, 6, 0), (3, 4, 7)];
+        let mut l1 = SinglyLinkedList::new();
+        let mut l2 = SinglyLinkedList::new();
+        let mut ans = SinglyLinkedList::new();
+        cases.iter().for_each(|e| {
+            l1.push(e.0);
+            l2.push(e.1);
+            ans.push(e.2);
+        });
+        assert_eq!(ans.head, Solution::add_two_numbers(l1.head, l2.head));
     }
 }

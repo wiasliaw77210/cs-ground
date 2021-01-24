@@ -1,4 +1,4 @@
-struct Solution;
+pub struct Solution;
 
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
@@ -20,5 +20,15 @@ impl Solution {
             ret = if l > ret { l } else { ret };
         }
         ret
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_sort() {
+        let s: String = "abcabcbb".to_owned();
+        assert_eq!(3, Solution::length_of_longest_substring(s));
     }
 }
