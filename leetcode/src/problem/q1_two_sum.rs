@@ -7,7 +7,7 @@ impl Solution {
         let mut mp: HashMap<i32, i32> = HashMap::new();
         let mut vecc: Vec<i32> = Vec::new();
         for (k_n, v_n) in nums.iter().enumerate() {
-            if let Some((need, k)) = mp.get_key_value(&v_n) {
+            if let Some((_, k)) = mp.get_key_value(&v_n) {
                 vecc.extend_from_slice(&[*k, k_n as i32]);
                 break;
             } else {
